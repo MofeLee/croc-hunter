@@ -2,7 +2,7 @@
 
 // load pipeline functions
 // Requires pipeline-github-lib plugin to load library from github
-@Library('github.com/lachie83/jenkins-pipeline@v0.1')
+@Library('github.com/MofeLee/jenkins-pipeline@master')
 def pipeline = new io.estrado.Pipeline()
 
 podTemplate(label: 'jenkins-pipeline', containers: [
@@ -160,7 +160,7 @@ volumes:[
             memory        : config.app.memory,
             hostname      : config.app.hostname
           )
-          
+
           //  Run helm tests
           if (config.app.test) {
             pipeline.helmTest(
